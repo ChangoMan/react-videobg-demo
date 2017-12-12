@@ -108,17 +108,22 @@ class Template extends React.Component {
 
   }
 
-  randomVideo() {
-    this.setState(function() {
-        return {
-            selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
-        }
-    });
+  randomVideo = () => {
+    this.setState({
+      selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
+    })
   }
 
-  _onReady(event) {
+  _onReady = (event) => {
     // access to player in all event handlers via event.target
     // event.target.mute();
+  }
+
+  _onError = (event) => {
+    console.log(event.target.getVideoData());
+    this.setState({
+      selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
+    })
   }
 
   render() {
@@ -128,9 +133,9 @@ class Template extends React.Component {
     const videoOptions = {
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
-        controls: 0,
-        rel: 0,
-        showinfo: 0
+        // controls: 0,
+        // rel: 0,
+        // showinfo: 0
       }
     };
 
@@ -164,6 +169,7 @@ class Template extends React.Component {
               className="video-iframe"
               onReady={this._onReady}
               onEnd={this.randomVideo}
+              onError={this._onError}
             />
           </div>
         </div>
