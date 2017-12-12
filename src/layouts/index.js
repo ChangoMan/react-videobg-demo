@@ -15,7 +15,39 @@ class Template extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading'
+      loading: 'is-loading',
+      selectedVideo: '',
+      customVideos: [
+        'Z6FPJOgfCkc', // Galaxy Supernova
+        'QN6KVm5cRWw', // Shy Boy
+        'DRSRpXPZVdM', // Is It Poppin
+        'NPqtL1dtrlA', // Love Options
+        'Zy_sgB4EJB8', // Tell Me Tell Me
+        'BclmGVKdHII', // Gee
+        'nUDMw9f24kE', // UU
+        '6SwiSpudKWI', // Genie
+        'TGbwL8kSpEk', // Oh!
+        'kKS12iGFyEA', // Danger
+        'nQm_9nbY_7U', // Would You Like Some Tea?
+        'Qk52ypnGs68', // Number 9
+        'Y-FhDScM_2w', // Some
+        '8iY3wGoJfng', // Sunshine
+        'Fzr2Nv8NTEE', // Mr. Taxi
+        'Z8j_XEn9b_8', // Mr. Mr.
+        'K5H-GvnNz2Y', // Mr. Chu
+        'YXZ19CvCmto', // Hush
+        'ouR4nn1G9r4', // Not Spring, Love
+        'p6XLNsJ9YrA', // Give it to me
+        'PfPWxK1BQFI', // Hoot
+        'hspqQuuuGIw', // NoNoNo
+        'c3-pUNhYORw', // Paparazzi
+        'jG1cIlM1juw', // Flower Power
+        'JCscyDno4yA', // Beep Beep
+        'bAicySTsvLo', // Berry Good Don't believe
+        'yuCbJykB32M', // Yoona Stonewall Walkway
+        '1pBgMBBsv4k', // Heart Attack
+        'sno_genwMz8', // Good Luck
+      ]
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -25,6 +57,7 @@ class Template extends React.Component {
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
     }, 100);
+    this.randomVideo();
   }
 
   componentWillUnmount () {
@@ -75,6 +108,14 @@ class Template extends React.Component {
 
   }
 
+  randomVideo() {
+      this.setState(function() {
+          return {
+              selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
+          }
+      });
+  }
+
   _onReady(event) {
     // access to player in all event handlers via event.target
     // event.target.mute();
@@ -122,7 +163,7 @@ class Template extends React.Component {
         <div className="video-background">
           <div className="video-foreground">
             <YouTube
-              videoId="Z6FPJOgfCkc"
+              videoId={this.state.selectedVideo}
               opts={videoOptions}
               className="video-iframe"
               onReady={this._onReady}
