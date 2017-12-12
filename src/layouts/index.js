@@ -75,6 +75,15 @@ class Template extends React.Component {
 
   }
 
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    // event.target.mute();
+  }
+
+  _onEnd(event) {
+    event.target.playVideo();
+  }
+
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = this.props.data.site.siteMetadata.description
@@ -113,9 +122,11 @@ class Template extends React.Component {
         <div className="video-background">
           <div className="video-foreground">
             <YouTube
-              videoId="nQm_9nbY_7U"
+              videoId="Z6FPJOgfCkc"
               opts={videoOptions}
               className="video-iframe"
+              onReady={this._onReady}
+              onEnd={this._onEnd}
             />
           </div>
         </div>
