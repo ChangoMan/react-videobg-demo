@@ -23,7 +23,7 @@ class Template extends React.Component {
         'DRSRpXPZVdM', // Is It Poppin
         'NPqtL1dtrlA', // Love Options
         'Zy_sgB4EJB8', // Tell Me Tell Me
-        'BclmGVKdHII', // Gee
+        'U7mPqycQ0tQ', // Gee
         'nUDMw9f24kE', // UU
         '6SwiSpudKWI', // Genie
         'TGbwL8kSpEk', // Oh!
@@ -32,8 +32,6 @@ class Template extends React.Component {
         'Qk52ypnGs68', // Number 9
         'Y-FhDScM_2w', // Some
         '8iY3wGoJfng', // Sunshine
-        'Fzr2Nv8NTEE', // Mr. Taxi
-        'Z8j_XEn9b_8', // Mr. Mr.
         'K5H-GvnNz2Y', // Mr. Chu
         'YXZ19CvCmto', // Hush
         'ouR4nn1G9r4', // Not Spring, Love
@@ -41,12 +39,13 @@ class Template extends React.Component {
         'PfPWxK1BQFI', // Hoot
         'hspqQuuuGIw', // NoNoNo
         'c3-pUNhYORw', // Paparazzi
-        'jG1cIlM1juw', // Flower Power
         'JCscyDno4yA', // Beep Beep
         'bAicySTsvLo', // Berry Good Don't believe
         'yuCbJykB32M', // Yoona Stonewall Walkway
         '1pBgMBBsv4k', // Heart Attack
         'sno_genwMz8', // Good Luck
+        'rRzxEiBLQCA', // Heart Shaker
+        '0rtV5esQT6I', // Like OOH-AHH
       ]
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
