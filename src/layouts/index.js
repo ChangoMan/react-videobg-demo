@@ -109,20 +109,16 @@ class Template extends React.Component {
   }
 
   randomVideo() {
-      this.setState(function() {
-          return {
-              selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
-          }
-      });
+    this.setState(function() {
+        return {
+            selectedVideo: this.state.customVideos[Math.floor(Math.random()*this.state.customVideos.length)]
+        }
+    });
   }
 
   _onReady(event) {
     // access to player in all event handlers via event.target
     // event.target.mute();
-  }
-
-  _onEnd(event) {
-    event.target.playVideo();
   }
 
   render() {
@@ -167,7 +163,7 @@ class Template extends React.Component {
               opts={videoOptions}
               className="video-iframe"
               onReady={this._onReady}
-              onEnd={this._onEnd}
+              onEnd={this.randomVideo}
             />
           </div>
         </div>
